@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Lightbox</title>
+	<link rel="stylesheet" href="css/nLightbox.jquery.css">
+	<!-- Try to load remote jquery, load local version of jQuery on fail -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  
+  	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
+	<script type="text/javascript" src="js/nLightbox.jquery.js"></script>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;			
+		}
+	</style>
+</head>
+<body>
+	<h1>Ferrari's Gallery</h1>
+
+	<a href="#" id="view-gallery">View gallery</a>
+	<div class="gallery">
+		<a href="#">
+			<img id="f1" src="img/ferrar1_small.jpg" alt="Ferrari 1" class="lightbox" data-large="img/ferrar1_large.jpg" data-medium="img/ferrar1_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f2" src="img/ferrar2_small.jpg" alt="Ferrari 2" class="lightbox" data-large="img/ferrar2_large.jpg" data-medium="img/ferrar2_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f3" src="img/ferrar3_small.jpg" alt="Ferrari 3" class="lightbox" data-large="img/ferrar3_large.jpg" data-medium="img/ferrar3_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f4" src="img/ferrar4_small.jpg" alt="Ferrari 4" class="lightbox" data-large="img/ferrar4_large.jpg" data-medium="img/ferrar4_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f5" src="img/ferrar5_small.jpg" alt="Ferrari 5" class="lightbox" data-large="img/ferrar5_large.jpg" data-medium="img/ferrar5_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f6" src="img/ferrar6_small.jpg" alt="Ferrari 6" class="lightbox" data-large="img/ferrar6_large.jpg" data-medium="img/ferrar6_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f7" src="img/ferrar7_small.jpg" alt="Ferrari 7" class="lightbox" data-large="img/ferrar7_large.jpg" data-medium="img/ferrar7_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f8" src="img/ferrar8_small.jpg" alt="Ferrari 8" class="lightbox" data-large="img/ferrar8_large.jpg" data-medium="img/ferrar8_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f9" src="img/ferrar9_small.jpg" alt="Ferrari 9" class="lightbox" data-large="img/ferrar9_large.jpg" data-medium="img/ferrar9_medium.jpg" />
+		</a>
+		<a href="#">
+			<img id="f10" src="img/ferrar10_small.jpg" alt="Ferrari 10" class="lightbox" data-large="img/ferrar10_large.jpg" data-medium="img/ferrar10_medium.jpg" />
+		</a>
+	</div>
+
+	<script type="text/javascript">
+		$('#view-gallery').click(function(e) {
+			e.preventDefault();
+			$('.lightbox').nLightbox();
+		});
+
+		$('.gallery a').click(function(e) {
+			e.preventDefault();
+			$(this).find('img').nLightbox({'showCaption': true});
+		});
+	</script>
+</body>
+</html>
